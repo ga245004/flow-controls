@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Flowchart algoriths design sheet</title>
+    <style>
+        body {
+            height: 100vh;
+            text-align: center;
+            background-color: #2196F3;
+            color: white;
+            margin: 0px;
+            padding: 0px;
+            user-select: none;
+            cursor: not-allowed;
+        }
+
+        h1 {
+            border: 2px solid;
+            border-radius: 50px;
+            padding: 10px;
+        }
+
+        .item {
+            align-self: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .shadow {
+            -webkit-box-shadow: 0px 0px 23px 1px #ffffff;
+            -moz-box-shadow: 0px 0px 23px 1px #ffffff;
+            box-shadow: 0px 0px 23px 1px #ffffff;
+        }
+
+        .wait {
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="item shadow">Work in progress
+            <span class="wait">.</span>
+            <span class="wait">.</span>
+            <span class="wait">.</span>
+        </h1>
+    </div>
+    <script>
+        var waitIndex = 0;
+        setInterval(function () {
+            var waits = document.getElementsByClassName("wait");
+            if (waitIndex >= waits.length) {
+                waitIndex = 0;
+                waits[0].style.visibility = "hidden";
+                waits[1].style.visibility = "hidden";
+                waits[2].style.visibility = "hidden";
+            } else {
+                waits[waitIndex++].style.visibility = "visible";
+            }
+
+        }, 1000);
+    </script>
+</body>
+
+</html>
